@@ -18,15 +18,15 @@ describe('books routes', () => {
     });
   });
 
-  // it('/books/1 should return a book detail with authors', async () => {
-  //   const res = await request(app).get('/books/1');
-  //   console.log(res.body);
-  //   expect(res.body).toEqual({
-  //     title: expect.any(String),
-  //     released: expect.any(Number),
-  //     authors: expect.any(String),
-  //   });
-  // });
+  it('/books/1 should return a book detail with authors', async () => {
+    const res = await request(app).get('/books/1');
+
+    expect(res.body).toEqual({
+      title: expect.any(String),
+      released: expect.any(Number),
+      authors: expect.any(Array),
+    });
+  });
 
   afterAll(() => {
     pool.end();
