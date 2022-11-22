@@ -22,8 +22,11 @@ describe('authors and books routes', () => {
     const res = await request(app).get('/authors/1');
     expect(res.status).toBe(200);
 
-    // expect(res.body).toEqual({
-    //     name: expect.
+    expect(res.body).toEqual({
+      name: expect.any(String),
+      dob: expect.any(String),
+      pob: expect.any(String),
+      books: expect.any(Array),
+    });
   });
 });
-// });
